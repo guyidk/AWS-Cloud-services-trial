@@ -1,0 +1,261 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "worlds_cookbook_http_api",
+    "version" : "2024-07-13 09:08:08UTC"
+  },
+  "servers" : [ {
+    "url" : "https://h1mvvjvdd4.execute-api.us-east-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : ""
+      }
+    }
+  } ],
+  "paths" : {
+    "/recipe/{RecipeId}" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /recipe/{RecipeId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:recipe/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "put" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for PUT /recipe/{RecipeId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:recipe/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "delete" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for DELETE /recipe/{RecipeId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:recipe/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "parameters" : [ {
+        "name" : "RecipeId",
+        "in" : "path",
+        "description" : "Generated path parameter for RecipeId",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/user/{userId}" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /user/{userId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:Worlds_cookbook_users/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "put" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for PUT /user/{userId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:Worlds_cookbook_users/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "delete" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for DELETE /user/{userId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:Worlds_cookbook_users/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "parameters" : [ {
+        "name" : "userId",
+        "in" : "path",
+        "description" : "Generated path parameter for userId",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/notifications/{userId}" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /notifications/{userId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:likes_info/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "parameters" : [ {
+        "name" : "userId",
+        "in" : "path",
+        "description" : "Generated path parameter for userId",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/recipes" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /recipes"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:recipe/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/recipes/{userId}" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /recipes/{userId}"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:recipe/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "parameters" : [ {
+        "name" : "userId",
+        "in" : "path",
+        "description" : "Generated path parameter for userId",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/like" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /like"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:likes_info/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/recipe" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /recipe"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:recipe/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/register" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /register"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:Worlds_cookbook_users/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/user-login" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /user-login"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:733907053896:function:Worlds_cookbook_users/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-cors" : {
+    "allowMethods" : [ "DELETE", "GET", "POST", "PUT" ],
+    "allowHeaders" : [ "authorization" ],
+    "maxAge" : 300,
+    "allowCredentials" : true,
+    "allowOrigins" : [ "http://*", "https://*" ]
+  },
+  "x-amazon-apigateway-importexport-version" : "1.0"
+}

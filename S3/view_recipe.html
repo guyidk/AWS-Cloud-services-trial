@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .recipe-container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            border: 3px solid #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .recipe-container img {
+            max-width: 400px;
+            max-height: 400px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .recipe-details {
+            flex: 1;
+        }
+        .recipe-details h2 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .recipe-details p {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #666;
+        }
+        .recipe-details .details p {
+            margin: 10px 0;
+        }
+        .recipe-details .details strong {
+            color: #333;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="js/ms2-recipe.js"></script>
+</head>
+<body>
+    <div id="recipeDetails" class="recipe-container">
+        <img id="recipe-image" src="" alt="Recipe Image">
+        <div class="recipe-details">
+            <div class="details">
+                <p><strong>Name:</strong> <span id="recipe-name"></span></p>
+                <p><strong>Category:</strong> <span id="recipe-category"></span></p>
+                <p><strong>Ingredients:</strong> <span id="recipe-ingredients"></span></p>
+                <p><strong>Instructions:</strong> <span id="recipe-instructions"></span></p>
+            </div>
+            <button class="back-button" onclick="window.history.back()">Back</button>
+        </div>
+    </div>
+</body>
+</html>

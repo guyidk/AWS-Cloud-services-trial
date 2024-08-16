@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            width: 100%;
+        }
+
+        button {
+            width: calc(50% - 5px); /* Adjusted to half width minus spacing */
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            float: left; /* Align to the left */
+            margin-right: 10px; /* Add space between buttons */
+            background-color: rgb(35, 145, 255);
+        }
+
+        .update-button {
+            float: right; /* Align to the right */
+            background-color: #4CAF50;
+        }
+
+        .back-button:hover {
+            background-color: #4572a0;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <img id="profileImage" src="" alt="Profile Image">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirm-password" placeholder="Confirm Password">
+        <input type="file" id="profileImageUpload" accept="image/*">
+        <button class="back-button" onclick="window.history.back()">Back</button>
+        <button class="update-button" onclick="updateUserDetails()">Save Changes</button>
+    </div>
+    <script src="js/ms1-users.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            getUserDetailsForEdit();
+            
+            // Add event listener for image upload
+            document.getElementById('profileImageUpload').addEventListener('change', function(event) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    document.getElementById('profileImage').src = reader.result;
+                }
+                if (event.target.files[0]) {
+                    reader.readAsDataURL(event.target.files[0]);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

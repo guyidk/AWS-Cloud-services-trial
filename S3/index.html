@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+        /* Existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/backdrop.jpg');
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 8px;
+            margin-right: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .links {
+            display: flex;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .recipe {
+            border: 1px solid #ccc;
+            padding: 16px;
+            border-radius: 8px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe img {
+            width: 100%;
+            height: 275px;
+            object-fit: contain;
+            max-width: 100%;
+            min-width: 200px;
+        }
+
+        .recipe h2 {
+            margin: 0;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .recipe p {
+            margin: 8px 0;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .view-button,
+        .edit-button,
+        .delete-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            background-color: rgb(33, 193, 33);
+        }
+
+        .delete-button {
+            background-color: red;
+        }
+
+        .view-button:hover {
+            background-color: #0056b3;
+        }
+
+        .edit-button:hover {
+            background-color: rgb(20, 142, 20);
+        }
+
+        .delete-button:hover {
+            background-color: darkred;
+        }
+    </style>
+    <script src="js/ms2-recipe.js"></script>
+    <script src="js/ms1-users.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (document.getElementById("user_recipeList")) {
+                getUserRecipes();
+            }
+
+            const searchInput = document.getElementById('searchInput');
+            const categoryInput = document.getElementById('categoryInput');
+
+            searchInput.addEventListener('input', searchRecipes);
+            categoryInput.addEventListener('input', searchRecipes);
+
+            updateLoginLogoutButton();
+            checkUserSession();
+        });
+
+        function checkUserSession() {
+            const userId = sessionStorage.getItem("userId");
+            const token = sessionStorage.getItem("token");
+
+            if (!userId || !token) {
+                document.getElementById('userDetailsLink').style.display = 'none';
+                document.getElementById('addRecipeLink').style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body onload="getRecipes();">
+    <div class="navbar">
+        <div class="links">
+            <a id="userDetailsLink" href="user.html">User Details</a>
+            <a id="addRecipeLink" href="add_recipe.html">Add Recipe</a>
+            <a id="loginLogoutButton">Logout</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by recipe name">
+            <input type="text" id="categoryInput" placeholder="Search by category">
+        </div>
+    </div>
+    <div class="container">
+        <h1>Recipes</h1>
+        <div class="recipe-grid" id="recipeList"></div>
+    </div>
+</body>
+</html>

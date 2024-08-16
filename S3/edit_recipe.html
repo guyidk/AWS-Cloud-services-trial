@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .recipe-form-container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            border: 3px solid #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .recipe-form-container img {
+            max-width: 400px; /* Adjust as needed */
+            max-height: 400px; /* Adjust as needed */
+            min-width: 200px; /* Adjust as needed */
+            min-height: 200px; /* Adjust as needed */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .form-content {
+            flex: 1;
+        }
+        .recipe-form-container h2 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .recipe-form-container label {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #666;
+            display: block;
+            text-align: left;
+        }
+        .recipe-form-container input[type="text"],
+        .recipe-form-container input[type="file"],
+        .recipe-form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .recipe-form-container textarea {
+            resize: vertical; /* Allow height resizing only */
+        }
+        .recipe-form-container {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .submit-button {
+            background-color: rgb(33, 193, 33);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: rgb(20, 142, 20);
+        }
+    </style>
+    <script src="js/ms2-recipe.js"></script>
+</head>
+<body>
+    <div class="recipe-form-container">
+        <img id="current-recipe-image" src="" alt="Current Recipe Image">
+        <div class="form-content">
+            <h2>Edit Recipe</h2>
+            <form id="editRecipeForm" onsubmit="event.preventDefault(); editRecipe();">
+                <label for="edit-recipeImage">Upload New Image:</label>
+                <input type="file" id="edit-recipeImage" name="recipeImage">
+
+                <label for="edit-recipename">Recipe Name:</label>
+                <input type="text" id="edit-recipename" name="recipename">
+
+                <label for="edit-category">Category:</label>
+                <input type="text" id="edit-category" name="category">
+
+                <label for="edit-ingredients">Ingredients:</label>
+                <textarea id="edit-ingredients" name="ingredients"></textarea>
+
+                <label for="edit-instructions">Instructions:</label>
+                <textarea id="edit-instructions" name="instructions"></textarea>
+
+                <button type="button" class="back-button" onclick="window.history.back()">Back</button>
+                <button type="submit" class="submit-button">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('edit-recipeImage').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('current-recipe-image').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
