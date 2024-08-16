@@ -1,0 +1,5 @@
+"userId","email","password","profileImageUrl","username"
+"b91758d1-3dff-4dc5-8beb-91e5968e2db7","mike@gmail.com","$2a$10$a4VFsGZEb2O1Kh2Hc0a4TuKZjmItqNjjqB5WTkXuh0dCJlUb34Ccu","https://worldscookbook-s3.s3.amazonaws.com/chef.png","mike"
+"1e60ca65-7647-423e-aaa4-941a5e01ee01","simon@gmail.com","$2a$10$Hiyl/L68.8XZUu0sTR8w6.DkQcUizjlUd9TaRzVBnsGO5DV3G/bwu","https://worldscookbook-s3.s3.amazonaws.com/chef.png","Simon"
+"55e20d91-fa1d-4c6b-af14-ef3fcacbf731","testuser@gmail.com","$2a$10$vXFosKdUSulio0BsXLnzjOq87cOloJswMdDgFOVPDq3JMOjgbUXju","https://worldscookbook-s3.s3.amazonaws.com/55e20d91-fa1d-4c6b-af14-ef3fcacbf731.png","Bob"
+"10128495-ea33-47ca-82ca-ba2e96d07f2f","JohnDoe@gmail.com","$2a$10$xv9imBi3LlVQNkb1b/cZQegen.ur580g9EY4H99g2i26QCo5p6Tma","https://worldscookbook-s3.s3.amazonaws.com/chef.png","JohnDoe"
